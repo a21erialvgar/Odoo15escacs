@@ -1,0 +1,247 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <!--
+            <record model="ir.ui.view" id="detectius.list">
+              <field name="name">detectius list</field>
+              <field name="model">detectius.detectius</field>
+              <field name="arch" type="xml">
+                <tree>
+                  <field name="name"/>
+                  <field name="value"/>
+                  <field name="value2"/>
+                </tree>
+              </field>
+            </record>
+        -->
+
+        <!-- actions opening views on models -->
+        <!--
+            <record model="ir.actions.act_window" id="detectius.action_window">
+              <field name="name">detectius window</field>
+              <field name="res_model">detectius.detectius</field>
+              <field name="view_mode">tree,form</field>
+            </record>
+        -->
+
+        <!-- server action to the one above -->
+        <!--
+            <record model="ir.actions.server" id="detectius.action_server">
+              <field name="name">detectius server</field>
+              <field name="model_id" ref="model_detectius_detectius"/>
+              <field name="state">code</field>
+              <field name="code">
+                action = {
+                  "type": "ir.actions.act_window",
+                  "view_mode": "tree,form",
+                  "res_model": model._name,
+                }
+              </field>
+            </record>
+        -->
+
+        <!-- Top menu item -->
+        <!--
+            <menuitem name="detectius" id="detectius.menu_root"/>
+        -->
+        <!-- menu categories -->
+        <!--
+            <menuitem name="Menu 1" id="detectius.menu_1" parent="detectius.menu_root"/>
+            <menuitem name="Menu 2" id="detectius.menu_2" parent="detectius.menu_root"/>
+        -->
+        <!-- actions -->
+        <!--
+            <menuitem name="List" id="detectius.menu_1_list" parent="detectius.menu_1"
+                      action="detectius.action_window"/>
+            <menuitem name="Server to list" id="detectius" parent="detectius.menu_2"
+                      action="detectius.action_server"/>
+        -->
+
+        <!--VISTAS DE INFORME-->
+        <record model="ir.ui.view" id="detectius.informe_list_view">
+            <field name="name">detectius.informe.view.tree</field>
+            <field name="model">detectius.informe</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="numExp"/>
+                    <field name="tipusInforme"/>
+                    <field name="numPag"/>
+                    <field name="dataIni"/>
+                    <field name="dataFi"/>
+                    <field name="entregat"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="detectius.informe_form_view_id">
+            <field name="name">detectius.informe.view.form</field>
+            <field name="model">detectius.informe</field>
+            <field name="arch" type="xml">
+                <form string="Formulari d'informe">
+                    <sheet>
+
+                        <separator string="Informació de l'expedient" style="font-size: 20px"/>
+
+                        <group>
+                            <group>
+                                <field name="numExp"/>
+                            </group>
+
+                            <group>
+                                <field name="tipusInforme"/>
+                            </group>
+
+                            <group>
+                                <field name="numPag"/>
+                            </group>
+
+                            <group>
+                                <field name="dataIni"/>
+                            </group>
+
+                            <group>
+                                <field name="dataFi"/>
+                            </group>
+
+                            <group>
+                                <field name="entregat"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!--VISTAS DE INVESTIGAT-->
+        <record model="ir.ui.view" id="detectius.investigat_list_view">
+            <field name="name">detectius.investigat.view.tree</field>
+            <field name="model">detectius.investigat</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nom"/>
+                    <field name="telefon"/>
+                    <field name="descripcio"/>
+                    <field name="vehicles"/>
+                    <field name="foto"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="detectius.investigat_form_view_id">
+            <field name="name">detectius.investigat.view.form</field>
+            <field name="model">detectius.investigat</field>
+            <field name="arch" type="xml">
+                <form string="Formulari d'investigat">
+                    <sheet>
+
+                        <separator string="Informació de l'investigat" style="font-size: 20px"/>
+
+                        <group>
+                            <group>
+                                <field name="telefon"/>
+                            </group>
+
+                              <group>
+                                <field name="descripcio"/>
+                            </group>
+
+                             <group>
+                                <field name="vehicles"/>
+                            </group>
+
+                            <group>
+                                <field name="foto"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--VISTAS DE JUDICI-->
+        <record model="ir.ui.view" id="detectius.judici_list_view">
+            <field name="name">detectius.judici.view.tree</field>
+            <field name="model">detectius.judici</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="poblacio"/>
+                    <field name="dataIhora"/>
+                    <field name="numJutjat"/>
+                    <field name="nomAdvocat"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="detectius.judici_form_view_id">
+            <field name="name">detectius.judici.view.form</field>
+            <field name="model">detectius.judici</field>
+            <field name="arch" type="xml">
+                <form string="Formulari d'investigat">
+                    <sheet>
+
+                         <separator string="Informació del judici" style="font-size: 20px"/>
+
+                        <group>
+                            <group>
+                                <field name="dataIhora"/>
+                            </group>
+
+                            <group>
+                                <field name="numJutjat"/>
+                            </group>
+
+                             <group>
+                                <field name="nomAdvocat"/>
+                            </group>
+                        </group>
+
+                        <!--<group>
+                            <group>
+                                <field name="foto"/>
+                            </group>
+                        </group>-->
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--DEFINICIO ACCIONS DE MENU-->
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="detectius.informe_action_window">
+            <field name="name">Informes</field>
+            <field name="res_model">detectius.informe</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="detectius.investigat_action_window">
+            <field name="name">Investigats</field>
+            <field name="res_model">detectius.investigat</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="detectius.judici_action_window">
+            <field name="name">Judicis</field>
+            <field name="res_model">detectius.judici</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!--DEFINICIO MENÚS-->
+        <!-- Top menu item -->
+        <menuitem name="Detectius" id="detectius.menu_root"/>
+        <!-- menu categories -->
+        <menuitem name="Informes" id="detectius.informe_menu" parent="detectius.menu_root"
+                  action="detectius.informe_action_window"/>
+        <menuitem name="Judicis" id="detectius.judici_menu" parent="detectius.menu_root"
+                  action="detectius.judici_action_window"/>
+        <menuitem name="Investigats" id="detectius.investigat_menu" parent="detectius.menu_root"
+                  action="detectius.investigat_action_window"/>
+        <menuitem name="Jugadors" id="jugadors.nom" parent=""
+
+
+    </data>
+</odoo>
