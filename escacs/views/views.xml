@@ -1,98 +1,38 @@
 <odoo>
     <data>
         <!-- explicit list view definition -->
-        <!--
-            <record model="ir.ui.view" id="detectius.list">
-              <field name="name">detectius list</field>
-              <field name="model">detectius.detectius</field>
-              <field name="arch" type="xml">
-                <tree>
-                  <field name="name"/>
-                  <field name="value"/>
-                  <field name="value2"/>
-                </tree>
-              </field>
-            </record>
-        -->
 
-        <!-- actions opening views on models -->
-        <!--
-            <record model="ir.actions.act_window" id="detectius.action_window">
-              <field name="name">detectius window</field>
-              <field name="res_model">detectius.detectius</field>
-              <field name="view_mode">tree,form</field>
-            </record>
-        -->
 
-        <!-- server action to the one above -->
-        <!--
-            <record model="ir.actions.server" id="detectius.action_server">
-              <field name="name">detectius server</field>
-              <field name="model_id" ref="model_detectius_detectius"/>
-              <field name="state">code</field>
-              <field name="code">
-                action = {
-                  "type": "ir.actions.act_window",
-                  "view_mode": "tree,form",
-                  "res_model": model._name,
-                }
-              </field>
-            </record>
-        -->
-
-        <!-- Top menu item -->
-        <!--
-            <menuitem name="detectius" id="detectius.menu_root"/>
-        -->
-        <!-- menu categories -->
-        <!--
-            <menuitem name="Menu 1" id="detectius.menu_1" parent="detectius.menu_root"/>
-            <menuitem name="Menu 2" id="detectius.menu_2" parent="detectius.menu_root"/>
-        -->
-        <!-- actions -->
-        <!--
-            <menuitem name="List" id="detectius.menu_1_list" parent="detectius.menu_1"
-                      action="detectius.action_window"/>
-            <menuitem name="Server to list" id="detectius" parent="detectius.menu_2"
-                      action="detectius.action_server"/>
-        -->
-
-        <!--VISTAS DE INFORME-->
-        <record model="ir.ui.view" id="detectius.informe_list_view">
-            <field name="name">detectius.informe.view.tree</field>
-            <field name="model">detectius.informe</field>
+        <!--VISTES DE TORNEIGS-->
+        <record model="ir.ui.view" id="detectius.torneigs_list_view">
+            <field name="name">escacs.torneigs.view.tree</field>
+            <field name="model">escacs.torneigs</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="numExp"/>
-                    <field name="tipusInforme"/>
-                    <field name="numPag"/>
+                    <field name="nomTorneig"/>
+                    <field name="Ciutat"/>
                     <field name="dataIni"/>
                     <field name="dataFi"/>
-                    <field name="entregat"/>
                 </tree>
             </field>
         </record>
 
-        <record model="ir.ui.view" id="detectius.informe_form_view_id">
-            <field name="name">detectius.informe.view.form</field>
-            <field name="model">detectius.informe</field>
+        <record model="ir.ui.view" id="escacs.torneigs_form_view_id">
+            <field name="name">escacs.torneigs.view.form</field>
+            <field name="model">escacs.torneigs</field>
             <field name="arch" type="xml">
-                <form string="Formulari d'informe">
+                <form string="Torneigs">
                     <sheet>
 
-                        <separator string="Informació de l'expedient" style="font-size: 20px"/>
+                        <separator string="Nom del torneig" style="font-size: 20px"/>
 
                         <group>
                             <group>
-                                <field name="numExp"/>
+                                <field name="nomTorneig"/>
                             </group>
 
                             <group>
-                                <field name="tipusInforme"/>
-                            </group>
-
-                            <group>
-                                <field name="numPag"/>
+                                <field name="Ciutat"/>
                             </group>
 
                             <group>
@@ -103,9 +43,6 @@
                                 <field name="dataFi"/>
                             </group>
 
-                            <group>
-                                <field name="entregat"/>
-                            </group>
                         </group>
 
                     </sheet>
@@ -114,45 +51,49 @@
         </record>
 
 
-        <!--VISTAS DE INVESTIGAT-->
-        <record model="ir.ui.view" id="detectius.investigat_list_view">
-            <field name="name">detectius.investigat.view.tree</field>
-            <field name="model">detectius.investigat</field>
+        <!--VISTAS DE PARTIDES-->
+        <record model="ir.ui.view" id="esacacs.partides_list_view">
+            <field name="name">escacs.partides.view.tree</field>
+            <field name="model">esaccs.partides</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="nom"/>
-                    <field name="telefon"/>
-                    <field name="descripcio"/>
-                    <field name="vehicles"/>
-                    <field name="foto"/>
+                    <field name="nomBlanques"/>
+                    <field name="nomNegres"/>
+                    <field name="resultat"/>
+                    <field name="numJugades"/>
+                    <field name="notacio"/>
                 </tree>
             </field>
         </record>
 
-        <record model="ir.ui.view" id="detectius.investigat_form_view_id">
-            <field name="name">detectius.investigat.view.form</field>
-            <field name="model">detectius.investigat</field>
+        <record model="ir.ui.view" id="escacs.partides_form_view_id">
+            <field name="name">escacs.partides.view.form</field>
+            <field name="model">escacs.partides</field>
             <field name="arch" type="xml">
-                <form string="Formulari d'investigat">
+                <form string="Partides Escacs">
                     <sheet>
 
-                        <separator string="Informació de l'investigat" style="font-size: 20px"/>
+                        <separator string="Partides d'escacs" style="font-size: 20px"/>
 
                         <group>
                             <group>
-                                <field name="telefon"/>
+                                <field name="nomBlanques"/>
                             </group>
 
                               <group>
-                                <field name="descripcio"/>
+                                <field name="nomNegres"/>
                             </group>
 
                              <group>
-                                <field name="vehicles"/>
+                                <field name="ressultat"/>
                             </group>
 
                             <group>
-                                <field name="foto"/>
+                                <field name="numJugades"/>
+                            </group>
+
+                            <group>
+                                <field name="notacio"/>
                             </group>
                         </group>
 
@@ -161,48 +102,43 @@
             </field>
         </record>
 
-        <!--VISTAS DE JUDICI-->
-        <record model="ir.ui.view" id="detectius.judici_list_view">
-            <field name="name">detectius.judici.view.tree</field>
-            <field name="model">detectius.judici</field>
+        <!--VISTAS DE JUGADORS-->
+        <record model="ir.ui.view" id="escacs.jugadors_list_view">
+            <field name="name">escacs.jugadors.view.tree</field>
+            <field name="model">escacs.jugadors</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="poblacio"/>
-                    <field name="dataIhora"/>
-                    <field name="numJutjat"/>
-                    <field name="nomAdvocat"/>
+                    <field name="nomJugador"/>
+                    <field name="eloFIDE"/>
+                    <field name="datanaixement"/>
+                    <field name="numPartides"/>
                 </tree>
             </field>
         </record>
 
-        <record model="ir.ui.view" id="detectius.judici_form_view_id">
-            <field name="name">detectius.judici.view.form</field>
-            <field name="model">detectius.judici</field>
+        <record model="ir.ui.view" id="escacs.jugadors_form_view_id">
+            <field name="name">escacs.jugadors.view.form</field>
+            <field name="model">escacs.jugadors</field>
             <field name="arch" type="xml">
-                <form string="Formulari d'investigat">
+                <form string="JUgadors d'escacs">
                     <sheet>
 
-                         <separator string="Informació del judici" style="font-size: 20px"/>
+                         <separator string="Nom Jugador" style="font-size: 20px"/>
 
                         <group>
                             <group>
-                                <field name="dataIhora"/>
+                                <field name="eloFIDE"/>
                             </group>
 
                             <group>
-                                <field name="numJutjat"/>
+                                <field name="datanaixement"/>
                             </group>
 
                              <group>
-                                <field name="nomAdvocat"/>
+                                <field name="numPartides"/>
                             </group>
                         </group>
 
-                        <!--<group>
-                            <group>
-                                <field name="foto"/>
-                            </group>
-                        </group>-->
 
                     </sheet>
                 </form>
@@ -232,15 +168,14 @@
 
         <!--DEFINICIO MENÚS-->
         <!-- Top menu item -->
-        <menuitem name="Detectius" id="detectius.menu_root"/>
+        <menuitem name="ChessERP" id="escacs.menu_root"/>
         <!-- menu categories -->
-        <menuitem name="Informes" id="detectius.informe_menu" parent="detectius.menu_root"
-                  action="detectius.informe_action_window"/>
-        <menuitem name="Judicis" id="detectius.judici_menu" parent="detectius.menu_root"
-                  action="detectius.judici_action_window"/>
-        <menuitem name="Investigats" id="detectius.investigat_menu" parent="detectius.menu_root"
-                  action="detectius.investigat_action_window"/>
-        <menuitem name="Jugadors" id="jugadors.nom" parent=""
+        <menuitem name="Torneigs" id="escacs.torenigs_menu" parent="escacs.menu_root"
+                  action="detectius.torneigs_action_window"/>
+        <menuitem name="Judicis" id="detectius.judici_menu" parent="escacs.menu_root"
+                  action="detectius.jugadors_action_window"/>
+        <menuitem name="Investigats" id="detectius.investigat_menu" parent="escacs.menu_root"
+                  action="detectius.partides_action_window"/>
 
 
     </data>
