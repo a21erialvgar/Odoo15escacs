@@ -4,7 +4,7 @@
 
 
         <!--VISTES DE TORNEIGS-->
-        <record model="ir.ui.view" id="detectius.torneigs_list_view">
+        <record model="ir.ui.view" id="escacs.torneigs_list_view">
             <field name="name">escacs.torneigs.view.tree</field>
             <field name="model">escacs.torneigs</field>
             <field name="arch" type="xml">
@@ -120,7 +120,7 @@
             <field name="name">escacs.jugadors.view.form</field>
             <field name="model">escacs.jugadors</field>
             <field name="arch" type="xml">
-                <form string="JUgadors d'escacs">
+                <form string="Jugadors d'escacs">
                     <sheet>
 
                          <separator string="Nom Jugador" style="font-size: 20px"/>
@@ -147,21 +147,21 @@
 
         <!--DEFINICIO ACCIONS DE MENU-->
         <!-- actions opening views on models -->
-        <record model="ir.actions.act_window" id="detectius.informe_action_window">
-            <field name="name">Informes</field>
-            <field name="res_model">detectius.informe</field>
+        <record model="ir.actions.act_window" id="escacs.torneigs_action_window">
+            <field name="name">Torneigs</field>
+            <field name="res_model">escacs.torneigs</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-        <record model="ir.actions.act_window" id="detectius.investigat_action_window">
-            <field name="name">Investigats</field>
-            <field name="res_model">detectius.investigat</field>
+        <record model="ir.actions.act_window" id="escacs.partides_action_window">
+            <field name="name">Partides</field>
+            <field name="res_model">escacs.partides</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-        <record model="ir.actions.act_window" id="detectius.judici_action_window">
-            <field name="name">Judicis</field>
-            <field name="res_model">detectius.judici</field>
+        <record model="ir.actions.act_window" id="escacs.jugadors_action_window">
+            <field name="name">Jugadors</field>
+            <field name="res_model">escacs.jugadors</field>
             <field name="view_mode">tree,form</field>
         </record>
 
@@ -170,12 +170,12 @@
         <!-- Top menu item -->
         <menuitem name="ChessERP" id="escacs.menu_root"/>
         <!-- menu categories -->
-        <menuitem name="Torneigs" id="escacs.torenigs_menu" parent="escacs.menu_root"
-                  action="detectius.torneigs_action_window"/>
-        <menuitem name="Judicis" id="detectius.judici_menu" parent="escacs.menu_root"
-                  action="detectius.jugadors_action_window"/>
-        <menuitem name="Investigats" id="detectius.investigat_menu" parent="escacs.menu_root"
-                  action="detectius.partides_action_window"/>
+        <menuitem name="Torneigs" id="escacs.torneigs_menu" parent="escacs.menu_root"
+                  action="escacs.torneigs_action_window"/>
+        <menuitem name="Jugadors" id="escacs.jugadors_menu" parent="escacs.menu_root"
+                  action="escacs.jugadors_action_window"/>
+        <menuitem name="Partides" id="escacs.partides_menu" parent="escacs.menu_root"
+                  action="escacs.partides_action_window"/>
 
 
     </data>
